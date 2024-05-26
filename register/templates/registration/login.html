@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Connexion
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form method = 'POST' class = 'form-group'>
+    {% csrf_token %}
+    {{ form|crispy }}
+    <p>Pas encore de compte ? Créez-en un <a href = '/register' target='_self'>ici</a></p>
+    <button type='submit' class = 'btn btn-warning'>Se connecter</button>
+</form>{% endblock %}
