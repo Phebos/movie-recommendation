@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block title %} Home Page {% endblock %}
+{% block content %}
+<p style="font-size: 30px; text-align: center">Passez le test et découvrez un film à votre goût !</p>
+
+<div id="autocomplete" class="autocomplete">
+    <input class="autocomplete-input" />
+    <ul class="autocomplete-result-list"></ul>
+</div>
+
+<p style="font-size: 30px; text-align: center;">En ce moment à l'affiche : </p>
+
+
+<div style="text-align: center; padding: 1em;">
+    <img style="text-align: center; padding: 0.5em;" src="https://image.tmdb.org/t/p/original/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg" width='200', height='auto' />
+    <img style="text-align: center; padding: 0.5em;" src="https://image.tmdb.org/t/p/original/eEelFTjUYJJDlwqd53VfSA8xMfj.jpg" width='200', height='auto' />
+    <img style="text-align: center; padding: 0.5em;" src="https://image.tmdb.org/t/p/original/pgveqayMFUIZbFqN87ghiKmmxt3.jpg" width='200', height='auto' />
+    <img style="text-align: center; padding: 0.5em;" src="https://image.tmdb.org/t/p/original/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg" width='200', height='auto' />
+    <img style="text-align: center; padding: 0.5em;" src="https://image.tmdb.org/t/p/original/iYypPT4bhqXfq1b6EnmxvRt6b2Y.jpg" width='200', height='auto' />
+</div>
+
+<script src="https://unpkg.com/@trevoreyre/autocomplete-js"></script>
+
+<script id="searchbar" class="searchbar">
+    new Autocomplete('#autocomplete',{
+        search : input => {
+            console.log(input)
+        const url = `/search/?french_title=${input}`
+        return new Promise(resolve =>{
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                resolve(data.data)
+            })
+        })
+    },
+    onSubmit : result => {
+        window.open(`/result/${result.slice(0,-7)}`,"_self")
+    }
+})
+</script>
+{% endblock %}
