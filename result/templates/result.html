@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_styles %}
+<style>
+    body {
+        background-image: url("{% static 'bg_result.jpg' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+{% endblock %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+{% if random_films %}
+    {% for film in random_films %}
+    <div class="film-container">
+        <div class="film">
+            <img src="https://image.tmdb.org/t/p/original{{film.poster}}" width='auto', height='289' alt="Film Poster 1" class="poster">
+            <div class="info">
+                <h2>Titre français : {{film.french_title}}</h2>
+                <p>Titre original : {{ film.original_title }}</p>
+                <p>Réalisateurs : {{film.directors}}</p>
+                <p>Scénaristes : {{film.writers}}</p>
+                <p>Genres : {{film.genres}}</p>
+                <p>Date de sortie : {{film.release_year}}</p>
+                <p>Durée : {{film.runtime}} mn</p>
+                <p>Note moyenne : {{film.avg_rating}}</p>
+                <p>Synopsis : {% if film.plot == 'nan' %} non disponible {% else %}{{ film.plot }} {% endif %}</p>
+
+                <form action="{% url 'vote' film.id %}" method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class = 'btn btn-warning'>Voter</button>
+                </form>
+            </div>
+        </div>
+    {% endfor %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function autoScroll() {
+                window.scrollBy(0, 1); // Scrolls down by 1 pixel
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2) { // Added a small buffer
+                    clearInterval(scrollInterval); // Stops the scrolling
+                }
+            }
+        
+            const scrollDelay = 3000; // Delay in milliseconds (5000 ms = 5 seconds)
+            let scrollInterval; // Declare the variable to be used later
+        
+            setTimeout(function() {
+                scrollInterval = setInterval(autoScroll, 10); // Assign the interval to the variable
+            }, scrollDelay);
+        });        
+    </script>
+{% else %}
+    <p>Problème.</p>
+{% endif %}
+{% endblock %}
