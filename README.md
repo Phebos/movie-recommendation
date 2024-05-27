@@ -62,7 +62,7 @@ You just have to download the project, install the reauirements using pip instal
 
 ## Usage
 
- Once you installed it, you only have to run the runserver command like this : python manage.py runserver and find the perfect movie for you !
+ Once you have it installed, you only have to run the runserver command like this : python manage.py runserver and find the perfect movie for you !
 
 
 ## Authors & contributors
