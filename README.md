@@ -38,8 +38,8 @@ Bored and don't know what to watch ? This recommendation system is the perfect t
 <summary>Screenshots</summary>
 <br>
 
-|                               Homepage                               |                               Recommendation page                               |
-| :-------------------------------------------------------------------: | :--------------------------------------------------------------------: |
+|      Homepage      |      Recommendation page      |
+| :----------------: | :---------------------------: |
 | <img src="docs/images/homepage.gif" title="Home Page" width="10%"> | <img src="docs/images/recommendation.gif" title="Login Page" width="10%"> |
 
 </details>
