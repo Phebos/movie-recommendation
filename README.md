@@ -40,7 +40,7 @@ Bored and don't know what to watch ? This recommendation system is the perfect t
 
 |                               Homepage                               |                               Recommendation page                               |
 | :-------------------------------------------------------------------: | :--------------------------------------------------------------------: |
-| <img src="docs/images/homepage.gif" title="Home Page" width="100%"> | <img src="docs/images/recommendation.gif" title="Login Page" width="75%"> |
+| <img src="docs/images/homepage.gif" title="Home Page" width="10%"> | <img src="docs/images/recommendation.gif" title="Login Page" width="10%"> |
 
 </details>
 
