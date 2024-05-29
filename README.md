@@ -58,8 +58,11 @@ All of the reauirements can be found in the requirements.txt file.
 
 ### Installation
 
-You just have to download the project, install the reauirements using pip install -r requirements.txt, and first execute the python script generate_reco as the file was too big to store using the command : python manage.py runscript -v2 generate_reco in the cinepolis repository.
+You have to download the project, install the reauirements using pip install -r requirements.txt, and first execute the python script generate_reco as the file was too big to store using the command : python manage.py runscript -v2 generate_reco in the cinepolis repository. Then execute this code in the django-admin shell command :
+``` from django.core.management.utils import get_random_secret_key  
+get_random_secret_key()```
 
+to generate a new secret key and store it in a .env file in the cinepolis folder.
 ## Usage
 
  Once you have it installed, you only have to run the runserver command like this : python manage.py runserver and find the perfect movie for you !
