@@ -48,7 +48,7 @@ Bored and don't know what to watch ? This recommendation system is the perfect t
 
 ### Built With
 
-We used the Django framework to built the website, it is connected to an sqlite database that stores data about the users account and the movies. The data gathering, filtering and processing was done using Python librairies like BeautifulSoup and Pandas. Lastly the NLP and the recommendation system were built using python librairies like nltk, Spacy and Sci-kit learn.
+We used the Django framework to build the website, it is connected to an sqlite database that stores users data and movies data. The data gathering, filtering and processing was done using Python librairies like BeautifulSoup and Pandas. Lastly the NLP and the recommendation system were built using python librairies like nltk, Spacy and Sci-kit learn.
 
 ## Getting Started
 
