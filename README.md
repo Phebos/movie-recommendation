@@ -72,4 +72,4 @@ to generate a new secret key and store it in a .env file in the cinepolis folder
 
 ## Authors & contributors
 
-The original setup of this repository is by [Quentin Bernardin](https://github.com/Phebos), [Abdelatif Touati](https://github.com/Phebos) and [Blandine Buffin](https://github.com/Phebos)
+The original setup of this repository is by [Quentin Bernardin](https://github.com/Phebos), [Abdelatif Touati](https://github.com/2501Pr0ject) and [Blandine Buffin](https://www.linkedin.com/in/blandine-buffin-a871a1249/)
